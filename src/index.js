@@ -15,7 +15,7 @@ store.dispatch(bugRemoved({ id: 1 }));
 store.dispatch(bugResolved({ id: 2 }));
 store.dispatch(assignBug({ id: 2, user: 3 }));
 
-console.log(getUnresolvedBugs(store.getState()) === getUnresolvedBugs(store.getState()));
+// console.log(getUnresolvedBugs(store.getState()) === getUnresolvedBugs(store.getState()));
 
 store.dispatch(projectAdded({
     name: "Lend Naira Web Project"
