@@ -1,6 +1,6 @@
 # State Management with Redux
 
-### Other topics to note for future use
+### Other topics addressed; to note for future use
 1. **Normalization**: Making reference from one object to another object instead of having the other object directly embedded in the former object. (DRY principle)
 ```js
 const person = {
@@ -12,7 +12,7 @@ const person = {
   }
 }
 ```
-**Instead of the above, with normalization we have,
+**Instead of the above, with normalization we have,**
 
 ```js
 const person = {
