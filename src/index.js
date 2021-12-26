@@ -1,6 +1,7 @@
 import configureStore from "./store/configureStore";
 import { assignBug, bugAdded, bugRemoved, bugResolved, getUnresolvedBugs } from "./store/bugs";
 import { projectAdded } from "./store/projects"
+import { userAdded } from "./store/users";
 
 const store = configureStore();
 
@@ -8,6 +9,9 @@ store.subscribe(() => {
   console.log("Some data are changing already");
 });
 
+store.dispatch(userAdded({ name: "Joseph" }));
+store.dispatch(userAdded({ name: "Esther" }));
+store.dispatch(userAdded({ name: "Larry" }));
 store.dispatch(bugAdded({ description: "Bug One (React Native)" }));
 store.dispatch(bugAdded({ description: "Bug Two (React with NextJS)" }));
 store.dispatch(bugAdded({ description: "Bug Three (React Native with expo)" }));
