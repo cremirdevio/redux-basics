@@ -23,4 +23,17 @@ const person = {
 ```
 __A sample library to be used to achieve this function if the data you fetch from the db is not normalized__: normalizr
 
-2. **Selector** - This is just like scopes on models in laravel. You add the required function in the reducer for the specified entity
+2. **Selector** - This is just like scopes on models in laravel. You add the required function in the reducer for the specified entity. 
+A common problem with selectors that return data is that they generate new data each time which can cause a rerender, this might be a problem, (having multiple data in memory) especially for expensive functions; *memoization* can be used to optimize expensive functions.
+
+```js
+// Use reselect library (npm)
+// This package solves the problem using memoization
+import { createSelector } from 'reselect';
+
+// Creating a memoized selector
+createSelector(
+  state => state.entities.bugs,
+  bugs => bugs.filter(bug => !bug.resolved)
+)
+```
